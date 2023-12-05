@@ -1,15 +1,16 @@
 CC=g++
 CFLAGS=-g -Wall
+CVER=-std=c++20
 EXEC=day2
 OBJ=$(EXEC).o
 DIRS=./
 DEPS=
 
 %.o: %.cpp $(DEPS)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CVER) $(CFLAGS) -c $< -o $@
 
 $(EXEC): $(OBJ)
-	$(CC) $(CFLAGS) $^ -o $@
+	$(CC) $(CVER) $(CFLAGS) $^ -o $@
 
 db:
 	lldb $(DIRS)$(EXEC)
